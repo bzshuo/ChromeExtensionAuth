@@ -6,9 +6,10 @@ const DEBUG_MAX = 15;
 const NATIVE_HOST_NAME = 'com.jiangtai.auth_capture';
 
 const ENV_ORIGINS = {
-  dev: 'https://med-pc-staff-dev.jiangtai.com',
-  test: 'https://med-pc-staff-test.jiangtai.com',
-  prod: 'https://admin.chinamedins.com'
+  med_dev: 'https://med-pc-staff-dev.jiangtai.com',
+  med_test: 'https://med-pc-staff-test.jiangtai.com',
+  med_prod: 'https://admin.chinamedins.com',
+  edu_test: 'https://edu-man-web-test.jiangtai.com'
 };
 
 const API_TOKENS_PATH = '/Users/bzshuo/Documents/JiangTai/Script/api_tokens.json';
@@ -92,7 +93,8 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
   { urls: [
     'https://med-pc-staff-dev.jiangtai.com/*',
     'https://med-pc-staff-test.jiangtai.com/*',
-    'https://admin.chinamedins.com/*'
+    'https://admin.chinamedins.com/*',
+    'https://edu-man-web-test.jiangtai.com/*'
   ] },
   ['requestHeaders']
 );

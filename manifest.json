@@ -7,7 +7,8 @@
   "host_permissions": [
     "https://med-pc-staff-dev.jiangtai.com/*",
     "https://med-pc-staff-test.jiangtai.com/*",
-    "https://admin.chinamedins.com/*"
+    "https://admin.chinamedins.com/*",
+    "https://edu-man-web-test.jiangtai.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
