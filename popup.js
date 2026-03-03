@@ -2,7 +2,7 @@ const STORAGE_KEY = 'authCaptureLog';
 const DEBUG_KEY = 'authCaptureDebug';
 const ENV_TOKENS_KEY = 'authEnvTokens';
 const ENV_KEYS = ['dev', 'test', 'prod'];
-const NATIVE_HOST_NAME = 'com.jiangtai.auth_capture';
+const NATIVE_HOST_NAME = 'com.auth_capture.bridge';
 const API_TOKENS_PATH = '/Users/bzshuo/Documents/JiangTai/Script/api_tokens.json';
 
 function checkNativeHost() {

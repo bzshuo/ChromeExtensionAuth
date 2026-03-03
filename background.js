@@ -3,7 +3,7 @@ const DEBUG_KEY = 'authCaptureDebug';
 const ENV_TOKENS_KEY = 'authEnvTokens';
 const LOG_MAX = 50;
 const DEBUG_MAX = 15;
-const NATIVE_HOST_NAME = 'com.jiangtai.auth_capture';
+const NATIVE_HOST_NAME = 'com.auth_capture.bridge';
 
 const ENV_ORIGINS = {
   med_dev: 'https://med-pc-staff-dev.jiangtai.com',

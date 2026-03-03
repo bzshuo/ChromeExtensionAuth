@@ -10,9 +10,9 @@ EXT_ID="$1"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 HOSTS_DIR="$HOME/Library/Application Support/Google/Chrome/NativeMessagingHosts"
 # 使用纯 ASCII 子目录，避免 Chrome 在 macOS 下对含中文路径启动失败
-INSTALL_DIR="$HOSTS_DIR/jiangtai_auth_host"
+INSTALL_DIR="$HOSTS_DIR/auth_capture_host"
 RUN_SH="$INSTALL_DIR/run.sh"
-MANIFEST="$HOSTS_DIR/com.jiangtai.auth_capture.json"
+MANIFEST="$HOSTS_DIR/com.auth_capture.bridge.json"
 
 if [ -z "$EXT_ID" ]; then
   echo "用法: $0 <扩展ID>"
@@ -30,7 +30,7 @@ chmod +x "$INSTALL_DIR/run.sh"
 chmod +x "$INSTALL_DIR/write_auth.py"
 
 echo "{
-  \"name\": \"com.jiangtai.auth_capture\",
+  \"name\": \"com.auth_capture.bridge\",
   \"description\": \"Authorization 写入指定文件\",
   \"path\": \"$RUN_SH\",
   \"type\": \"stdio\",
