@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 420px; max-height: 400px; font-size: 12px; font-family: sans-serif; margin: 8px; }
+    h2 { margin: 0 0 8px 0; font-size: 14px; }
+    .empty { color: #888; padding: 8px 0; }
+    ul { list-style: none; padding: 0; margin: 0; max-height: 260px; overflow-y: auto; }
+    li { padding: 6px 8px; border-bottom: 1px solid #eee; word-break: break-all; }
+    li.has-auth { background: #e8f5e9; }
+    li.no-auth { background: #fff3e0; }
+    .time { color: #666; font-size: 11px; }
+    .badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; margin-left: 6px; }
+    .badge.yes { background: #4caf50; color: #fff; }
+    .badge.no { background: #ff9800; color: #fff; }
+    .settings { margin-bottom: 10px; padding: 8px; background: #f5f5f5; border-radius: 4px; }
+    .path-hint { font-size: 11px; color: #666; margin-top: 4px; }
+    #nativeStatus.native-ok { color: #2e7d32; }
+    #nativeStatus.native-fail { color: #c62828; }
+    .debug-title { font-size: 11px; color: #666; margin: 12px 0 4px 0; }
+    .debug-list { border-top: 1px solid #ddd; padding-top: 8px; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Authorization 捕获</h2>
+  <div class="settings">
+    <p class="path-hint"><strong>写入文件：</strong>/Users/bzshuo/Documents/JiangTai/Script/api_tokens.json</p>
+    <p class="path-hint" id="nativeStatus">Native 主机：检测中…</p>
+    <p class="path-hint" id="envHint">已捕获环境：—</p>
+  </div>
+  <p><strong>最近请求</strong></p>
+  <ul id="list"></ul>
+  <div id="debug"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

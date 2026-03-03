@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Authorization 捕获",
+  "version": "1.1",
+  "description": "监听 dev/test/prod ，自动写入 api_tokens.json 供以使用",
+  "permissions": ["webRequest", "downloads", "storage", "nativeMessaging"],
+  "host_permissions": [
+    "https://med-pc-staff-dev.jiangtai.com/*",
+    "https://med-pc-staff-test.jiangtai.com/*",
+    "https://admin.chinamedins.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "查看捕获记录"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
