@@ -43,16 +43,20 @@ def main():
         merge = msg.get("merge")
         content = msg.get("content")
         if merge is not None:
-            data = {}
-            if os.path.isfile(path):
-                with open(path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-            if not isinstance(data, dict):
-                data = {}
-            data.update(merge)
+            # 存在则读取后合并写入，不存在则新增文件
             dirpath = os.path.dirname(path)
             if dirpath and not os.path.isdir(dirpath):
                 os.makedirs(dirpath, exist_ok=True)
+            data = {}
+            if os.path.isfile(path):
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                except (PermissionError, OSError, FileNotFoundError, json.JSONDecodeError):
+                    data = {}
+            if not isinstance(data, dict):
+                data = {}
+            data.update(merge)
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
         elif content is not None:
