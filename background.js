@@ -65,8 +65,23 @@ function writeEnvToken(envKey, token) {
 
     const merge = { [envKey]: token };
     chrome.runtime.sendNativeMessage(NATIVE_HOST_NAME, { path: API_TOKENS_PATH, merge }, (reply) => {
-      if (chrome.runtime.lastError || !reply || !reply.success) {
+      const err = chrome.runtime.lastError;
+      if (err) {
+        pushDebug({
+          type: 'nativeError',
+          time: new Date().toLocaleString('zh-CN'),
+          message: err.message || String(err)
+        });
         fallbackToDownload(JSON.stringify(envTokens, null, 2));
+        return;
+      }
+
+      if (!reply || reply.success !== true) {
+        pushDebug({
+          type: 'nativeReply',
+          time: new Date().toLocaleString('zh-CN'),
+          reply: reply || null
+        });
       }
     });
   });
